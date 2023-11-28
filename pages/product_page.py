@@ -1,13 +1,11 @@
 from .base_page import BasePage
 from .locators import ProductPageLocators
-import time
 
 
 class ProductPage(BasePage):
     def add_product_to_basket(self):
         button_add_product_to_basket = self.browser.find_element(*ProductPageLocators.BUTTON_ADD_PRODUCT_TO_BASKET)
         button_add_product_to_basket.click()
-        time.sleep(2)
 
     def should_be_message_about_adding(self):
         # Сначала проверяем, что элементы присутствуют на странице
@@ -17,9 +15,7 @@ class ProductPage(BasePage):
         product_name = self.browser.find_element(*ProductPageLocators.PRODUCT_NAME).text
         message = self.browser.find_element(*ProductPageLocators.MES_ABOUT_ADDING).text
         # Проверяем, что название товара присутствует в сообщении о добавлении
-        # Это можно было бы сделать с помощью split() и сравнения строк,
-        # Но не вижу необходимости усложнять код
-        assert product_name in message, "No product name in the message"
+        assert product_name == message, "No product name in the message"
 
     def should_be_message_basket_total(self):
         # Сначала проверяем, что элементы присутствуют на странице

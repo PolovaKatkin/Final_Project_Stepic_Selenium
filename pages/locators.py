@@ -15,8 +15,8 @@ class LoginPageLocators():
 
 
 class ProductPageLocators():
-    BUTTON_ADD_PRODUCT_TO_BASKET = (By.XPATH, "//button[@value='Добавить в корзину']")
-    MES_ABOUT_ADDING = (By.CSS_SELECTOR, "div.alertinner ")
-    PRODUCT_NAME = (By.CSS_SELECTOR, "div.product_main h1")
-    MESSAGE_BASKET_TOTAL = (By.CSS_SELECTOR, ".alert-info .alertinner strong")
-    PRODUCT_PRICE = (By.CSS_SELECTOR, ".product_main .price_color")
+    BUTTON_ADD_PRODUCT_TO_BASKET = (By.XPATH, "//*[@id='add_to_basket_form']/button")
+    MES_ABOUT_ADDING = (By.XPATH, "//*[@id='messages']/div[1]/div/strong")
+    PRODUCT_NAME = (By.XPATH, "//div/h1")
+    MESSAGE_BASKET_TOTAL = (By.XPATH, "//*[@id='messages']/div[3]/div/p[1]/strong")
+    PRODUCT_PRICE = (By.XPATH, "//*[@id='content_inner']/article/div[1]/div[2]/p[1]")
