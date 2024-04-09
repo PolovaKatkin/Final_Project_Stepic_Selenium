@@ -13,6 +13,7 @@ def pytest_addoption(parser):
 def browser():
     print("\nstart browser for test..")
     browser = webdriver.Chrome()
+    browser.maximize_window()
     yield browser
     print("\nquit browser..")
     browser.quit()
